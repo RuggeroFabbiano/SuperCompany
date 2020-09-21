@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Confirm delete - {% endblock %}
+
+{% block content %}
+  <div id="confirm" class="page">
+    <div id="postEdit">
+      <h4>Delete post "{{post.title}}"?</h4>
+      <form method="POST">
+        {% csrf_token %}
+        <div id="deleteOrNot">
+          <input class="btn" type="submit" value="Yes, delete">
+          <a class="btn" href="{% url 'blog:article' pk=post.pk %}">No, take me back</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

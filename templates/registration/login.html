@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign in - {% endblock %}
+
+{% block content %}
+  <div class="page centered">
+    <div class="sign">
+      <h2>Sign in</h2>
+      <form method="post">
+        {% csrf_token %}
+        <table>
+          <tr>
+            <td class="signLabel"><p>User name:</p></td>
+            <td class="signInput"><p>{{form.username}}</p></td>
+          </tr>
+          <tr>
+            <td class="signLabel"><p>Password:</p></td>
+            <td class="signInput"><p>{{form.password}}</p></td>
+          </tr>
+          {% if form.errors %}
+            <h6 style="color: red">User name - password mismatch; please try again.</h6>
+          {% endif %}
+        </table>
+        <div id="centerButton">
+          <button class="btn signIn" type="submit">Sign in</button>
+          <br>
+          <h6><a href="{% url 'blog:subscribe' %}">First time here? Sign up</a></h6>
+        </div>
+        <input type="hidden" value="{% if request.REQUEST.next %}{{request.REQUEST.next}}{% elif request.META.HTTP_REFERER %}{{request.META.HTTP_REFERER}}{% else %}{{next}}{% endif %}" name="next"/>
+      </form>
+    </div>
+  </div>
+{% endblock %}

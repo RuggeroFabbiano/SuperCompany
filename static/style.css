@@ -1,0 +1,294 @@
+* {padding: 0;
+   margin: 0}
+
+:root {--colour1: #FF6600} /* "arancione" */
+
+/* -------------------------------------------------------------------------- */
+
+/* NAVIGATION BAR */
+
+nav {background-color: var(--colour1)}
+
+#logo {height: 30pt;
+       margin-right: 30pt}
+
+.nav-link {font-family: 'Abel', sans-serif;
+           font-size: 16pt;
+           color: white;
+           margin: 0 0.5em}
+
+.nav-link:hover {color: white;
+                 font-weight: bold}
+
+#user {fill-rule: evenodd;
+       margin-right: 2em}
+
+#user:hover {fill-rule: nonzero}
+
+.dropdown {margin-right: 2em}
+
+.dropdown-menu {background-color: var(--colour1)}
+
+.dropdown-item:link, .dropdown-item:visited {font-family: 'Abel', sans-serif;
+                                             color: white;
+                                             background-color: var(--colour1)}
+
+.dropdown-item:hover {color: var(--colour1);
+                      background-color: white}
+
+.form-inline {border: 1pt solid grey;
+              border-radius: 5px}
+
+.form-inline:focus-within {box-shadow: 0 0 0 0.15em rgba(128, 128, 128, 0.5)}
+
+.form-control {font-family: 'Abel', sans-serif;
+               font-size: 11pt;
+               max-width: 300px;
+               border: none;
+               border-radius: 4px 0 0 4px}
+
+.form-control:focus {box-shadow: none}
+
+#magnifyingGlass {font-family: 'Abel', sans-serif;
+                  font-size: 11pt;
+                  color: grey;
+                  background-color: white;
+                  height: 36px;
+                  border: none;
+                  border-radius: 0 4px 4px 0}
+
+#magnifyingGlass:hover {color: var(--colour1)}
+
+.social {height: 16pt;
+         opacity: 0.75;
+         margin-left: -0.5em}
+
+.social:hover {opacity: 1}
+
+.navbar-toggler {color: white;
+                 border: 1pt solid white}
+
+/* -------------------------------------------------------------------------- */
+
+/* CONTAINERS */
+
+.page {font-family: 'Abel', sans-serif;
+       color: white;
+       background-image: url('images/Background.jpg');
+       background-size: cover}
+
+#home {text-align: center;
+       padding: 10em}
+
+#journal {padding: 3em}
+
+.article {max-width: 500px;
+          padding: 1em 2em;
+          margin-top: 18pt;
+          margin-bottom: 18pt;
+          background-color: rgba(0, 0, 0, 0.75)}
+
+.article:link, .article:hover, .article:visited {background-color: rgba(255, 102, 0, 0.75)}
+
+.article a:link, .article a:hover, .article a:visited {text-decoration: none}
+
+.postInfo {display: flex;
+           justify-content: space-between;
+           align-items: center;
+           color: white}
+
+.date {font-size: smaller}
+
+#content {color: white;
+          background-color: rgba(0, 0, 0, 0.75);
+          padding: 0.5em 1em;
+          margin-bottom: 1em}
+
+.underPost {display: flex;
+            justify-content: space-between}
+
+.commentLine {display: flex;
+              justify-content: space-between;
+              align-items: center}
+
+.comment {color: black;
+          background-color: rgba(255, 255, 255, 0.75);
+          border-radius: 25px;
+          padding: 3pt 12pt;
+          margin-top: 6pt;
+          margin-bottom: 6pt;
+          width: 350px}
+
+#newComment {background-color: white}
+
+.centered {text-align: center}
+
+.sign {background-color: rgba(0, 0, 0, 0.67);
+       padding: 2em 2em 0 2em;
+       margin: 3em;
+       display: inline-block}
+
+#confirm {padding: 3em}
+
+#postEdit {max-width: 600px;
+           background-color: rgba(0, 0, 0, 0.67);
+           padding: 3em;
+           margin: auto}
+
+#deleteOrNot {display: flex;
+              justify-content: space-between;
+              padding: 1.5em 100px 0 100px;
+              margin: 0}
+
+/* -------------------------------------------------------------------------- */
+
+/* TEXT */
+
+h1 {font-size: 72pt;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0}
+
+#home h1 {padding-bottom: 0.5em}
+
+#about h1 {padding-top: 0.5em;
+           padding-left: 0.5em}
+
+h2 {font-size: 30pt;
+    font-weight: bold;
+    text-align: left}
+
+h3 {font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 5pt}
+
+h4 {font-size: 20pt;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 8pt}
+
+h5 {font-size: 18pt;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5)}
+
+#home h5 {padding-bottom: 0.5em}
+
+#about h5 {padding-left: 2em;
+           padding-bottom: 3em}
+
+h6 {font-size: 12pt;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em}
+
+h6 a:link, h6 a:visited {color: var(--colour1)}
+
+h6 a:hover {font-weight: bold;
+            text-decoration: none}
+
+.help h6 {font-size: 11pt;
+          color: grey;
+          padding: 0;
+          margin: -2em 0 0 2em}
+
+p {font-size: 16pt;
+   margin-top: 1em}
+
+#newComment p {font-size: 12pt}
+
+.signInput p {font-size: 13pt}
+
+/* -------------------------------------------------------------------------- */
+
+/* BUTTONS */
+
+.btn {color: var(--colour1);
+      font-weight: bold;
+      background-color: white;
+      border: 1pt solid var(--colour1)}
+
+.btn:hover {color: white;
+            font-weight: bold;
+            background-color: var(--colour1);
+            border: 1pt solid white}
+
+#commentLogin {margin-top: 6pt}
+
+#saveComment {font-size: 9pt;
+              color: white;
+              background-color: var(--colour1);
+              border: 1pt solid white;
+              float: right;
+              margin-bottom: 1em}
+
+.deleteEdit {font-size: 12pt;
+             color: white;
+             background-color: var(--colour1);
+             border: none;
+             margin-left: 1em}
+
+.deleteEdit:hover {color: var(--colour1);
+                   background-color: white;
+                   border: none}
+
+.signIn, .signUp {padding: 0.2em 0.5em}
+
+.signUp {margin-top: -1em;
+         margin-bottom: 1em}
+
+.confirm {margin-top: 2em}
+
+/* -------------------------------------------------------------------------- */
+
+/* FORMS */
+
+table {margin-top: 2em}
+
+td {text-align: left;
+    padding-bottom: 2em}
+
+td p {padding: 0;
+      margin: 0}
+
+.signLabel {padding-right: 1.5em}
+
+.help h6 ul {padding: 0;
+             margin: 0}
+
+#id_posted {position: absolute;
+            top: 5px;
+            left: 4.5em;
+            width: 25px;
+            height: 25px;
+            z-index: 2;
+            opacity: 0}
+
+#checkBoxParent {position: relative}
+
+#checkBox {position: absolute;
+           top: 5px;
+           left: 4.5em;
+           width: 25px;
+           height: 25px;
+           background-color: white;
+           border: 1px solid var(--colour1);
+           border-radius: 6px;
+           z-index: 1}
+
+#checkBox::after {position: absolute;
+                  content: "";
+                  -webkit-transition: all 0.3s ease-out;
+                  -moz-transition: all 0.3s ease-out;
+                  -ms-transition: all 0.3s ease-out;
+                  -o-transition: all 0.3s ease-out;
+                  z-index: 1}
+
+input:checked ~ #checkBox::after {top: 4px;
+                                  left: 8px;
+                                  width: 6px;
+                                  height: 12px;
+                                  border: solid var(--colour1);
+                                  border-width: 0 3px 3px 0;
+                                  transform: rotate(45deg) scale(1);
+                                  -webkit-transform: rotate(45deg) scale(1);
+                                  -ms-transform: rotate(45deg) scale(1);
+                                  z-index: 1}

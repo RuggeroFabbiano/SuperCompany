@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}My drafts - {% endblock %}
+
+{% block searchBar %}{% include "searchBar.html" %}{% endblock %}
+
+{% block content %}
+  <div id="journal" class="page">
+    {% if post_list %}
+      {% for post in post_list %}
+        <div class="article">
+          <a href="{% url 'blog:article' pk=post.pk %}">
+            <h4>{{post.title | safe | linebreaksbr}}</h4>
+            <div class="postInfo">
+              <div>
+                <h6><strong>{{post.author.get_full_name}}</strong></h6>
+                <h6 class="date">{{post.date | date:"j F Y, H:i"}}</h6>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    {% else %}
+      {% if request.GET %}
+        <h4>No results for given research</h4>
+      {% else %}
+        <h4>You have no draft post</h4>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endblock %}
