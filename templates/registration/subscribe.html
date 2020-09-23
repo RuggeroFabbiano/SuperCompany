@@ -15,7 +15,9 @@
               <td class="signInput"><p>{{field}}</p></td>
             </tr>
             {% if field.help_text %}
-              <tr><td colspan="2" class="help"><h6>{{field.help_text}}</h6></td></tr>
+              <tr>
+                <td colspan="2" class="help"><h6>{{field.help_text}}</h6></td>
+              </tr>
             {% endif %}
             {% for error in field.errors %}
               <h6 style="color: red">{{error}}</h6>

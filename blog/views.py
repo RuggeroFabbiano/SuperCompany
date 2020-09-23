@@ -1,14 +1,14 @@
-from django.views.generic import (ListView, DetailView, UpdateView,  DeleteView,
-    CreateView)
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
-from django.views.generic.edit import FormMixin
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.decorators import login_required
-from blog.models import Post, Comment
-from blog.forms import CommentForm, SignUpForm, PostForm
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
+                                  UpdateView)
+from django.views.generic.edit import FormMixin
+from .models import Post, Comment
+from .forms import CommentForm, SignUpForm, PostForm
 
 class PostList(ListView):
     model = Post

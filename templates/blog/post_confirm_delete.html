@@ -10,7 +10,9 @@
         {% csrf_token %}
         <div id="deleteOrNot">
           <input class="btn" type="submit" value="Yes, delete">
-          <a class="btn" href="{% url 'blog:article' pk=post.pk %}">No, take me back</a>
+          <a class="btn" href="{% url 'blog:article' pk=post.pk %}">
+            No, take me back
+          </a>
         </div>
       </form>
     </div>
