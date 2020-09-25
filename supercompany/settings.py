@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'SuperCompany.urls'
+ROOT_URLCONF = 'supercompany.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'SuperCompany.wsgi.application'
+WSGI_APPLICATION = 'supercompany.wsgi.application'
 
 
 # Database
@@ -121,7 +121,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_URL = '/static/'
-STATIC_ROOT = '/static_final/'
+STATIC_ROOT = 'collected_static'
 
 MEDIUM_EDITOR_OPTIONS = {
     'toolbar': {
