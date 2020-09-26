@@ -25,7 +25,7 @@ SECRET_KEY = '(j6iw&7)1q94!vy76b_f^nrtk=t$(en_5v_j@g45!pb^%%q3(o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['li502-147.members.linode.com']
+ALLOWED_HOSTS = ['*', 'li453-104.members.linode.com']
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mediumeditor',
+    # 'mediumeditor',
     'blog.apps.BlogConfig'
 ]
 
@@ -123,21 +123,21 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_URL = '/static/'
 STATIC_ROOT = 'collected_static'
 
-MEDIUM_EDITOR_OPTIONS = {
-    'toolbar': {
-        'buttons': [
-            'bold',
-            'italic',
-            'underline',
-            'strikethrough',
-            'subscript',
-            'superscript',
-            'link',
-            'quote'
-        ]
-    },
-    'placeholder': {'text': 'insert text'}
-}
+# MEDIUM_EDITOR_OPTIONS = {
+#     'toolbar': {
+#         'buttons': [
+#             'bold',
+#             'italic',
+#             'underline',
+#             'strikethrough',
+#             'subscript',
+#             'superscript',
+#             'link',
+#             'quote'
+#         ]
+#     },
+#     'placeholder': {'text': 'insert text'}
+# }
 
 LOGIN_URL = 'blog:login'
 LOGIN_REDIRECT_URL = 'blog:journal'

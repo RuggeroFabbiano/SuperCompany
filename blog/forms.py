@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.utils.safestring import mark_safe
 from .models import Post, Comment
-from mediumeditor.widgets import MediumEditorTextarea
+# from mediumeditor.widgets import MediumEditorTextarea
 
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=50, required=True)
@@ -39,13 +39,13 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'content', 'posted')
-        widgets = {'title': MediumEditorTextarea(),
-                   'content': MediumEditorTextarea()}
+        # widgets = {'title': MediumEditorTextarea(),
+        #            'content': MediumEditorTextarea()}
         labels = {'posted': "Post now"}
 
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('content',)
-        widgets = {'content': MediumEditorTextarea()}
+        # widgets = {'content': MediumEditorTextarea()}
         labels = {'content': "Add comment"}
