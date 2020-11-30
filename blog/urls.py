@@ -1,3 +1,7 @@
+"""
+Definition of the blog app. URLs
+"""
+
 from django.urls import path
 from django.contrib.auth import views as authViews
 from . import views
