@@ -1,11 +1,22 @@
+"""
+Forms for the blog app.:
+ - sign-up
+ - new/edit post
+ - new comment
+"""
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.utils.safestring import mark_safe
-from .models import Post, Comment
 from mediumeditor.widgets import MediumEditorTextarea
+from .models import Post, Comment
+
+User = get_user_model()
 
 class SignUpForm(UserCreationForm):
+    """
+    Defines sign-up form as a modified version of the standard UserCreationForm
+    """
     first_name = forms.CharField(max_length=50, required=True)
     last_name = forms.CharField(max_length=50, required=True)
     email = forms.EmailField(max_length=100, required=False,
@@ -15,7 +26,7 @@ class SignUpForm(UserCreationForm):
         fields = ('username', 'password1', 'password2', 'first_name',
             'last_name', 'email')
     def __init__(self, *args, **kwargs):
-        super(SignUpForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.fields['username'].label = "User name"
         self.fields['username'].help_text = mark_safe(""
             "<ul>"
@@ -36,6 +47,9 @@ class SignUpForm(UserCreationForm):
         self.fields['email'].label = "E-mail address"
 
 class PostForm(forms.ModelForm):
+    """
+    Defines post form
+    """
     class Meta:
         model = Post
         fields = ('title', 'content', 'posted')
@@ -44,6 +58,9 @@ class PostForm(forms.ModelForm):
         labels = {'posted': "Post now"}
 
 class CommentForm(forms.ModelForm):
+    """
+    Defines comment form
+    """
     class Meta:
         model = Comment
         fields = ('content',)
