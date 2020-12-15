@@ -1,9 +1,18 @@
+"""
+Admin. registration module
+"""
+
 from django.contrib import admin
-from .models import Post, Comment
 from mediumeditor.admin import MediumEditorAdmin
+from .models import Post, Comment
+
 
 @admin.register(Post)
 class PostAdmin(MediumEditorAdmin, admin.ModelAdmin):
+    """
+    Admin. registration for post model
+    """
+
     mediumeditor_fields = ('title', 'content')
     search_fields = ['title', 'content']
     list_display = ['title', 'content', 'date']
@@ -12,4 +21,8 @@ class PostAdmin(MediumEditorAdmin, admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(MediumEditorAdmin, admin.ModelAdmin):
+    """
+    Admin. registration for comment model
+    """
+
     mediumeditor_fields = ('content')
